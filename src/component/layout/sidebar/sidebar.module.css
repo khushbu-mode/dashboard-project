@@ -1,0 +1,43 @@
+.sidebar {
+  width: 220px;
+  background: #0a1844;
+  color: #ffffff;
+  min-height: 100vh;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.4;
+  margin-bottom: 48px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.link {
+  color: #cbd5e1;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.link:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.active {
+  background: #fff5e0;
+  color: #0a1844;
+  font-weight: 600;
+}

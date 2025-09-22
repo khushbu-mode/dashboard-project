@@ -1,0 +1,90 @@
+.tableContainer {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.header h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  color: #111827;
+}
+
+.header a {
+  font-size: 14px;
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.header a:hover {
+  text-decoration: underline;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  text-align: left;
+  font-size: 14px;
+  font-weight: 600;
+  color: #6b7280;
+  padding: 14px 12px;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.table td {
+  font-size: 14px;
+  padding: 14px 12px;
+  border-bottom: 1px solid #f9f9f9;
+  color: #111827;
+}
+
+.badge {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.badge.gold {
+  background: #fff7db;
+  color: #b58900;
+}
+
+.badge.platinum {
+  background: #f0f0f5;
+  color: #444444;
+}
+
+.badge.titanium {
+  background: #fce7f3;
+  color: #a21caf;
+}
+
+.status {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.status.active {
+  color: #16a34a;
+}
+
+.status.pending {
+  color: #ea580c;
+}
+
+.status.inactive {
+  color: #9ca3af;
+}

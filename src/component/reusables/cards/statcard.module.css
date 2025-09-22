@@ -1,0 +1,30 @@
+.card {
+  flex: 1;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.icon {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.value {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.label {
+  font-size: 14px;
+  color: #6b7280;
+  margin-top: 4px;
+}
