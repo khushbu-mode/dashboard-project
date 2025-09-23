@@ -1,21 +1,21 @@
 "use client";
-
-import Sidebar from "../layout/sidebar/sidebar";
-import Header from "../layout/header/header";
 import StatCard from "../reusables/cards/statCard";
 import MembersTable from "../reusables/tables/memberTable";
 import { FaUsers, FaCrown, FaGem, FaAward } from "react-icons/fa";
 import headerStyles from "../layout/header/header.module.css";
+import { useRouter } from "next/navigation";
 
 export default function Dashboard() {
-  return (
-    <div>
+      const router = useRouter();
+      const addmember = () => {
+        router.push("/dashboard/addmember");
+      };
+      const evententries = () => {
+        router.push("/dashboard/evententries");
+      };
 
-      <div style={{ display: "flex" }}>
-        <Sidebar />
-        <main style={{ flex: 1, background: "#f8fafc" }}>
-          <Header />
-          <div style={{ padding: "95px", }}>
+  return (
+    <div style={{ padding: "95px", }}>
             <div style={{padding:"13px"}}>
               <div
                 style={{
@@ -28,8 +28,8 @@ export default function Dashboard() {
                   Members Management System
                 </p>
                 <div style={{ display: "flex", gap: "15px" }}>
-                  <button className={headerStyles.eventBtn}>Event Entries</button>
-                  <button className={headerStyles.addBtn}>+ Add New Member</button>
+                  <button className={headerStyles.eventBtn} onClick={evententries}>Event Entries</button>
+                  <button className={headerStyles.addBtn} onClick={addmember}>+ Add New Member</button>
                 </div>
               </div>
 
@@ -52,9 +52,7 @@ export default function Dashboard() {
             {/* Members Table */}
             <MembersTable />
           </div>
-        </main>
-      </div>
-    </div>
+  
   );
 }
 

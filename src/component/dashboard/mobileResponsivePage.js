@@ -1,19 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import {
-  Bell,
-  Phone,
-  Video,
-  MoreVertical,
-  Calendar,
-  Users,
-  BarChart2,
-  Crown,
-} from "lucide-react";
+import { Bell, Phone, Video, MoreVertical, Calendar, Users, BarChart2, Crown } from "lucide-react";
 import Image from "next/image";
 
-export default function MobileDashboard() {
+export default function mobileResponsivePage() {
   const [filter, setFilter] = useState("Today");
 
   const meetings = [
@@ -50,12 +41,12 @@ export default function MobileDashboard() {
   ];
 
   return (
-    <div className="w-full min-h-screen pb-20 bg-white p-4 font-sans">
+    <div className="w-full min-h-screen bg-white p-4 font-sans">
       {/* Header */}
       <div className="flex justify-between items-center mb-4">
         <Bell className="w-6 h-6 text-gray-600" />
         <Image
-          src="/profile.jpg" // ensure this image exists in /public
+          src="/profile.jpg"
           alt="profile"
           width={32}
           height={32}
@@ -65,7 +56,7 @@ export default function MobileDashboard() {
 
       {/* Overview */}
       <div className="flex justify-between items-center mb-2">
-        <h2 className="text-lg sm:text-xl font-semibold">Overview</h2>
+        <h2 className="text-lg font-semibold">Overview</h2>
         <select
           value={filter}
           onChange={(e) => setFilter(e.target.value)}
@@ -77,49 +68,28 @@ export default function MobileDashboard() {
         </select>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
-        <OverviewCard
-          icon={<Calendar className="text-blue-600" />}
-          title="Total Meetings"
-          value="248"
-        />
-        <OverviewCard
-          icon={<Users className="text-green-600" />}
-          title="Total Visitors"
-          value="1,842"
-        />
-        <OverviewCard
-          icon={<BarChart2 className="text-purple-600" />}
-          title="Conversion Rate"
-          value="248"
-        />
-        <OverviewCard
-          icon={<Crown className="text-orange-500" />}
-          title="Active Members"
-          value="1,842"
-        />
+      <div className="grid grid-cols-2 gap-3 mb-4">
+        <OverviewCard icon={<Calendar className="text-blue-600" />} title="Total Meetings" value="248" />
+        <OverviewCard icon={<Users className="text-green-600" />} title="Total Visitors" value="1,842" />
+        <OverviewCard icon={<BarChart2 className="text-purple-600" />} title="Conversion Rate" value="248" />
+        <OverviewCard icon={<Crown className="text-orange-500" />} title="Active Members" value="1,842" />
       </div>
 
       {/* Recent Meetings */}
       <div className="flex justify-between items-center mb-2">
-        <h2 className="text-lg sm:text-xl font-semibold">Recent Meetings</h2>
+        <h2 className="text-lg font-semibold">Recent Meetings</h2>
         <button className="text-sm text-indigo-600">View All</button>
       </div>
 
       <div className="space-y-3">
         {meetings.map((m, idx) => (
-          <div
-            key={idx}
-            className="p-3 border rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200"
-          >
+          <div key={idx} className="p-3 border rounded-xl shadow-sm" style={{ borderColor: '#E5E7EB' }}>
             <div className="flex justify-between items-center">
               <div>
                 <h3 className="font-medium">{m.name}</h3>
                 <p className="text-sm text-gray-500">{m.email}</p>
               </div>
-              <span
-                className={`text-xs px-2 py-1 rounded-lg font-medium ${m.tagColor}`}
-              >
+              <span className={`text-xs px-2 py-1 rounded-lg font-medium ${m.tagColor}`}>
                 {m.tag}
               </span>
             </div>
@@ -150,7 +120,7 @@ export default function MobileDashboard() {
       </div>
 
       {/* Bottom Nav */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white border-t flex justify-around py-2 md:hidden">
+      <div className="fixed bottom-0 left-0 right-0 bg-white border-t flex justify-around py-2">
         <NavItem label="Dashboard" icon={<Calendar className="w-6 h-6" />} active={false} />
         <NavItem label="Meetings" icon={<Users className="w-6 h-6" />} active={true} />
         <NavItem label="Business" icon={<BarChart2 className="w-6 h-6" />} active={false} />
@@ -160,32 +130,24 @@ export default function MobileDashboard() {
   );
 }
 
-// Responsive OverviewCard
-function OverviewCard({
-  icon,
-  title,
-  value,
-}: {
-  icon: JSX.Element;
-  title: string;
-  value: string;
-}) {
+function OverviewCard({ icon, title, value }) {
   return (
-    <div className="p-4 rounded-xl shadow-sm bg-gray-50 flex flex-col space-y-1">
+    <div className="p-4 rounded-xl border flex flex-col space-y-1" style={{ borderColor: '#E5E7EB' }}>
       <div className="flex items-center space-x-2">
         {icon}
-        <span className="text-xs sm:text-sm text-gray-500">{title}</span>
       </div>
-      <h3 className="text-lg sm:text-xl font-bold">{value}</h3>
+
+      <h3 className="text-lg font-bold">{value}</h3>
+        <span className="text-xs text-gray-500">{title}</span>
+
     </div>
   );
 }
 
-// Responsive NavItem
-function NavItem({ label, icon, active }: { label: string; icon: JSX.Element; active: boolean }) {
+function NavItem({ label, icon, active }) {
   return (
     <button
-      className={`flex flex-col items-center text-xs sm:text-sm ${
+      className={`flex flex-col items-center text-xs ${
         active ? "text-indigo-600" : "text-gray-500"
       }`}
     >

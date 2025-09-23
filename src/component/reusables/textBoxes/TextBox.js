@@ -14,7 +14,7 @@ export default function TextBox({
   const showError = touched && required && !value;
 
   return (
-    <div style={{ marginBottom: "16px", width: "135%" }}>
+    <div style={{ marginBottom: "16px", }}>
       {label && <label style={{ display: "block", marginBottom: "6px" }}>{label}</label>}
       <input
         type={type}

@@ -4,19 +4,11 @@ import RadioGroup from "../reusables/buttons/radioButtons/radioGroup";
 import DatePicker from "../reusables/datePickers/datePicker";
 import FormSection from "../reusables/forms/form";
 import InputField from "../reusables/textBoxes/inputField";
-import Header from "../layout/header/header";
 
 export default function AddMember() {
   return (
-
-        <div>
-      {/* Header */}
-      <Header />
-
     <div style={{ padding: "130px" }}>
       <h2 style={{ marginBottom: "20px" }}>← Add New Member</h2>
-
-      {/* Personal Info */}
       <FormSection title="Personal Information">
         <InputField label="Full Name" required placeholder="Enter full name" />
         <InputField label="Email ID" required placeholder="Enter business email" />
@@ -32,7 +24,6 @@ export default function AddMember() {
         <InputField label="State" required placeholder="Enter State" />
       </FormSection>
 
-      {/* Membership Info */}
       <FormSection title="Membership Information">
         <InputField label="Membership Code" required placeholder="G-101" />
         <RadioGroup
@@ -55,7 +46,6 @@ export default function AddMember() {
         />
       </FormSection>
 
-      {/* Business Info */}
       <FormSection title="Business Information">
         <InputField label="Company Name" required placeholder="Enter company" />
         <InputField label="Business Website" placeholder="Enter website" />
@@ -63,7 +53,6 @@ export default function AddMember() {
         <InputField label="Designation" placeholder="Enter designation" />
       </FormSection>
 
-      {/* Additional Info */}
       <FormSection title="Additional Information">
         <InputField label="Account Number" required placeholder="Enter account number" />
         <InputField label="Re-Account Number" placeholder="Re-enter account number" />
@@ -72,7 +61,6 @@ export default function AddMember() {
         <InputField label="IFSC Code" placeholder="Enter IFSC code" />
         <InputField label="UTR No" placeholder="Enter UTR no" />
       </FormSection>
-    </div>
     </div>
   );
 }
