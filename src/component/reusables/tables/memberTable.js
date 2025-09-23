@@ -1,4 +1,6 @@
 import styles from "./membertable.module.css";
+import {  FaEye, FaGripVertical } from "react-icons/fa";
+
 
 const members = [
   { name: "Sarah Mitchell", code: "G-101", tier: "Gold", status: "Active", joined: "Mar 15, 2024" },
@@ -34,7 +36,7 @@ export default function MembersTable() {
               <td><span className={`${styles.badge} ${styles[m.tier.toLowerCase()]}`}>{m.tier}</span></td>
               <td><span className={`${styles.status} ${styles[m.status.toLowerCase()]}`}>{m.status}</span></td>
               <td>{m.joined}</td>
-              <td>👁 • ⋮</td>
+              <td><FaEye/></td>
             </tr>
           ))}
         </tbody>

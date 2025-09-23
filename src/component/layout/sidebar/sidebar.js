@@ -1,9 +1,9 @@
 import styles from "./sidebar.module.css"
 
+  
 export default function Sidebar() {
   return (
     <aside className={styles.sidebar}>
-      <div className={styles.logo}>AURUM<br/>CoNexus</div>
       <nav className={styles.nav}>
         <a className={styles.link}>Dashboard</a>
         <a className={styles.link}>Meetings</a>

@@ -1,46 +1,48 @@
 .header {
-  height: 64px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 90px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 0 24px;
-  background: #ffffff;
-  border-bottom: 1px solid #e5e7eb;
+  justify-content: space-between;
+  background-color: #0a1844;
+  color: white;
+  padding: 0px 64px;
+  z-index: 1000;
+}
+
+.left {
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
 .right {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 20px;
 }
 
 .eventBtn {
-  background: #f5f5f5;
-  border: none;
+  background-color: #ffffff;
+  color: #0a1844;
   padding: 8px 14px;
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: 500;
+  border: 1px solid black;
+  border-radius: 6px;
   cursor: pointer;
-}
-
-.eventBtn:hover {
-  background: #e5e7eb;
+  font-weight: 600;
 }
 
 .addBtn {
-  background: #d4a017;
-  border: none;
+  background-color: #f39c12;
+  color: white;
   padding: 8px 14px;
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: 500;
-  color: #ffffff;
+  border: none;
+  border-radius: 6px;
   cursor: pointer;
-}
-
-.addBtn:hover {
-  background: #b38712;
+  font-weight: 600;
 }
 
 .profile {
@@ -50,20 +52,28 @@
 }
 
 .avatar {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   object-fit: cover;
 }
 
-.profile p {
-  font-size: 14px;
-  font-weight: 600;
-  margin: 0;
-  color: #111827;
+.profileIcon{
+	border-radius: 50px;
+	justify-content: center;
+	align-items: center;
+	width: 48px;
+	height: 48px;
+	font-size: 27px;
+	display: flex;
+	border: 1px solid;
 }
 
-.profile small {
-  font-size: 12px;
-  color: #6b7280;
+.notification{
+  position: relative;
+  color: white;
+}
+.bellIcon{
+  font-size: 27px;
+  cursor: pointer;
 }

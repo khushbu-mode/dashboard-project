@@ -1,43 +1,41 @@
 .sidebar {
   width: 220px;
-  background: #0a1844;
-  color: #ffffff;
-  min-height: 100vh;
-  padding: 24px 16px;
-  display: flex;
-  flex-direction: column;
+  background-color: white; /* White background */
+  height: 100vh;
+  padding: 20px;
+  border-right: 1px solid #ddd;
+  margin-top: 90px;
 }
 
 .logo {
-  font-weight: 700;
   font-size: 20px;
-  line-height: 1.4;
-  margin-bottom: 48px;
+  font-weight: bold;
+  color: #0a1844;
+  margin-bottom: 30px;
+  line-height: 1.2;
 }
 
 .nav {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 15px;
 }
 
 .link {
-  color: #cbd5e1;
-  font-size: 15px;
-  font-weight: 500;
-  padding: 10px 14px;
-  border-radius: 8px;
-  cursor: pointer;
   text-decoration: none;
-  transition: background 0.2s ease, color 0.2s ease;
+  color: #0a1844;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+  cursor: pointer;
 }
 
 .link:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background-color: #f4f6f8;
 }
 
 .active {
-  background: #fff5e0;
-  color: #0a1844;
-  font-weight: 600;
+  background-color: #fff3e0;
+  color: #f39c12;
 }

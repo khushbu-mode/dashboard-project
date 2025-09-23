@@ -4,11 +4,16 @@ import RadioGroup from "../reusables/buttons/radioButtons/radioGroup";
 import DatePicker from "../reusables/datePickers/datePicker";
 import FormSection from "../reusables/forms/form";
 import InputField from "../reusables/textBoxes/inputField";
-
+import Header from "../layout/header/header";
 
 export default function AddMember() {
   return (
-    <div style={{ padding: "24px" }}>
+
+        <div>
+      {/* Header */}
+      <Header />
+
+    <div style={{ padding: "130px" }}>
       <h2 style={{ marginBottom: "20px" }}>← Add New Member</h2>
 
       {/* Personal Info */}
@@ -67,6 +72,7 @@ export default function AddMember() {
         <InputField label="IFSC Code" placeholder="Enter IFSC code" />
         <InputField label="UTR No" placeholder="Enter UTR no" />
       </FormSection>
+    </div>
     </div>
   );
 }
