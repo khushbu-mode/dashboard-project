@@ -59,17 +59,18 @@ export default function LoginPage() {
 
       <div
         className="hidden md:flex flex-1 flex-col justify-center items-start p-8 lg:p-12 bg-cover bg-center rounded-t-3xl md:rounded-none md:rounded-l-3xl relative"
-        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D ')" }}
+        style={{ backgroundImage: "url('/images/login.jpg')" }}
       >
         <img
+        style={{color:"gold", fontSize:"25px"}}
           src="/aurum-logo.png"
           alt="Aurum CoNexus"
           className="absolute top-4 right-4 w-24 lg:w-32"
         />
-        <h2 className="text-3xl lg:text-5xl font-bold mb-4 text-white">
+        <h2 className="text-3xl lg:text-5xl font-bold mb-4 text-white text-[50px]">
           Welcome back!
         </h2>
-        <p className="text-base lg:text-xl max-w-lg text-white">
+        <p className="text-base lg:text-xl max-w-lg text-white text-[20px]">
           Enter your credentials to access your account
         </p>
       </div>

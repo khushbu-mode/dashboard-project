@@ -1,13 +1,13 @@
 "use client";
 
-import StatsCard from "./StatsCard";
-import CurrentEventCard from "./CurrentEventCard";
+import CurrentEventCard from "./ActiveEvent";
 import Link from "next/link";
-import headerStyles from "../layout/header/header.module.css"
-import { User2, FileText } from "lucide-react";
 import { Plus } from "lucide-react";
 import { FaArrowLeft } from "react-icons/fa";
 import { useRouter } from "next/navigation";
+import StatCard from "../reusables/cards/statCard";
+import { FaUsers, FaCrown} from "react-icons/fa";
+
 
 
 export default function PageHeader({ currentEvent }) {
@@ -40,7 +40,7 @@ export default function PageHeader({ currentEvent }) {
       <div className="flex flex-col lg:flex-row gap-6">
         <div className="flex-1 rounded-lg border border-[#e6e6e9] bg-white">
           <div className="border-b border-[#f0f0f2] pt-6 pb-6 pl-6">
-            <h3 className="text-md font-semibold text-gray-700" style={{fontSize:"20px"}}>Current Events</h3>
+            <h3 className="text-md font-semibold text-gray-700 text-[20px]" >Current Events</h3>
           </div>
           <CurrentEventCard event={currentEvent} />
         </div>
@@ -51,7 +51,10 @@ export default function PageHeader({ currentEvent }) {
             </button>
           </Link>
           <div className="flex flex-col gap-4">
-            <StatsCard
+            <StatCard icon={FaUsers} value="350" label="Active Member" iconColor="#22c55e" bgColor="#7ef7abff" />
+                        <StatCard icon={FaCrown} value="135" label="Gold" ic="#facc15" bgColor="#ffe682ff" />
+              
+            {/* <StatsCard
               icon={<User2 className="text-green-600" />}
               value="350"
               label="Total Members"
@@ -62,7 +65,7 @@ export default function PageHeader({ currentEvent }) {
               value="94"
               label="Event Entries"
               bg="#EDE9FE"
-            />
+            /> */}
           </div>
         </aside>
       </div>

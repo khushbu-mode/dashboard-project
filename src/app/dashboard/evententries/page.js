@@ -1,4 +1,4 @@
-import PageHeader from "@/component/evententries/PageHeader";
+import PageHeader from "@/component/evententries/EventTop";
 import EventCard from "@/component/evententries/EventCard";
 import Header from "@/component/layout/header/header";
 

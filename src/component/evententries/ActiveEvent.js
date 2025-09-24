@@ -2,7 +2,6 @@
 import { useState } from "react";
 import Image from "next/image";
 import { CalendarDays, MapPin, Clock } from "lucide-react";
-import EventEntries from "./AddEvent";
 export default function CurrentEventCard({ event }) {
 
   return (
