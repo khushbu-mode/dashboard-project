@@ -3,16 +3,15 @@ import { CalendarDays, MapPin, Users } from "lucide-react";
 
 export default function EventCard({ event }) {
   return (
-    <div className="border rounded-lg overflow-hidden bg-white shadow-sm">
+    <div className="overflow-hidden bg-white">
       <Image
-        src={event.image || "/images/event.png"}
+        src={event.image || "/images/hall.png"}
         alt={event.title}
         width={400}
         height={250}
-        className="w-full h-48 object-cover"
+        className="w-full h-48 object-cover rounded-lg"
       />
-      <div className="p-4">
-        {/* Tag + Location */}
+      <div className="p-4 gap-6">
         <div className="flex items-center justify-between gap-2 mb-2">
           <span className="px-3 py-1 text-xs font-medium text-blue-600 bg-blue-100 rounded-full">
             {event.tag}
@@ -26,11 +25,8 @@ export default function EventCard({ event }) {
           )}
         </div>
 
-        {/* Title & Description */}
         <h3 className="text-md font-semibold text-gray-900">{event.title}</h3>
         <p className="text-sm text-gray-600 mb-3">{event.description}</p>
-
-        {/* Date & Spots */}
         <div className="flex items-center justify-between text-sm text-gray-500">
           <div className="flex items-center gap-2">
             <CalendarDays className="h-4 w-4" />

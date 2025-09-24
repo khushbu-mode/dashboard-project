@@ -1,56 +1,70 @@
+"use client";
+
 import StatsCard from "./StatsCard";
 import CurrentEventCard from "./CurrentEventCard";
 import Link from "next/link";
+import headerStyles from "../layout/header/header.module.css"
 import { User2, FileText } from "lucide-react";
 import { Plus } from "lucide-react";
+import { FaArrowLeft } from "react-icons/fa";
+import { useRouter } from "next/navigation";
+
+
 export default function PageHeader({ currentEvent }) {
+
+  const router = useRouter();
+  const addmember = () => {
+    router.push("/dashboard/addmember");
+  };
   return (
-    <div className="w-full bg-white shadow-sm rounded-lg p-6 mb-8">
-      {/* Top bar */}
-      <div className="flex items-center justify-between mb-6">
-       <Link href="/members" className="block mb-6">
-        <h1 className="text-lg font-semibold text-gray-900 hover:text-[#0B1F44] flex items-center gap-2">
-          &larr; Add New Member
-        </h1>
-      </Link>
-        <Link href="/addmember">
-      <button
-        className="inline-flex items-center gap-2 rounded-lg bg-amber-600 px-3 py-2 text-sm font-medium text-white shadow-sm hover:bg-amber-700"
-      >
-        <span>Add New Member</span>
-        <Plus className="h-4 w-4" />
-      </button>
-    </Link>
+    <div className="w-full mx-auto px-8 py-6">
+      <div className="flex items-center justify-between mb-6  pb-4">
+        <Link href="/members" className="flex items-center gap-3">
+          <FaArrowLeft className="text-xl text-gray-700" />
+          <h2 className="text-lg font-semibold text-gray-800">Events Entry</h2>
+        </Link>
+
+        <div className="flex items-center gap-3">
+          <Link href="/addmember">
+            <button
+              onClick={addmember}
+              className="inline-flex items-center gap-2 rounded-md px-4 py-2 border border-[#dfe6f4] text-sm font-medium text-[#2b3a4a] hover:bg-white/50 bg-white shadow-sm"
+            >
+              Add New Member
+              <Plus className="w-4 h-4" />
+            </button>
+          </Link>
+        </div>
       </div>
 
-      {/* Current Event + Stats */}
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-        <div className="lg:col-span-3">
-          <h2 className="text-md font-semibold mb-3 text-gray-700">Current Events</h2>
+      <div className="flex flex-col lg:flex-row gap-6">
+        <div className="flex-1 rounded-lg border border-[#e6e6e9] bg-white">
+          <div className="border-b border-[#f0f0f2] pt-6 pb-6 pl-6">
+            <h3 className="text-md font-semibold text-gray-700" style={{fontSize:"20px"}}>Current Events</h3>
+          </div>
           <CurrentEventCard event={currentEvent} />
         </div>
-        <div className="space-y-4">
-              <Link href="/viewmembers">
-      <button className="w-full flex justify-between items-center rounded-lg border px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100">
-        Detailed Entries <span>→</span>
-      </button>
-    </Link>
-
-         <div className="grid grid-cols-1 gap-4 w-[200px] mt-4">
-      <StatsCard
-        icon={<User2 className="text-green-600" />}
-        value="350"
-        label="Total Members"
-        color="#D1FAE5" // light green
-      />
-      <StatsCard
-        icon={<FileText className="text-purple-600" />}
-        value="94"
-        label="Event Entries"
-        color="#EDE9FE" // light purple
-      />
-    </div>
-        </div>
+        <aside className="w-full lg:w-64 flex-shrink-0 flex flex-col justify-between">
+          <Link href="/viewmembers">
+            <button className="w-full flex justify-between items-center rounded-lg border border-[#e6e6e9] px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">
+              Detailed Entries <span className="text-lg">→</span>
+            </button>
+          </Link>
+          <div className="flex flex-col gap-4">
+            <StatsCard
+              icon={<User2 className="text-green-600" />}
+              value="350"
+              label="Total Members"
+              bg="#D1FAE5"
+            />
+            <StatsCard
+              icon={<FileText className="text-purple-600" />}
+              value="94"
+              label="Event Entries"
+              bg="#EDE9FE"
+            />
+          </div>
+        </aside>
       </div>
     </div>
   );

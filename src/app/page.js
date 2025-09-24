@@ -5,22 +5,18 @@ import { useRouter } from "next/navigation";
 import TextBox from "@/component/reusables/textBoxes/TextBox";
 
 export default function LoginPage() {
-    const router = useRouter();
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleLogin = (e) => {
     e.preventDefault();
-    if (email && password) {
-      router.push("/dashboard");
-    } else {
-      alert("Please fill in both fields");
-    }
+    router.push("/dashboard");
+
   };
 
   return (
     <div className="flex flex-col md:flex-row min-h-screen bg-white">
-      {/* Left - Login Form */}
       <div className="flex-1 flex items-center justify-center p-6 sm:p-8 md:p-12">
         <div className="w-full max-w-sm sm:max-w-md">
           <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-black text-center md:text-left">
@@ -61,12 +57,10 @@ export default function LoginPage() {
         </div>
       </div>
 
-      {/* Right - Welcome Panel */}
       <div
         className="hidden md:flex flex-1 flex-col justify-center items-start p-8 lg:p-12 bg-cover bg-center rounded-t-3xl md:rounded-none md:rounded-l-3xl relative"
         style={{ backgroundImage: "url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D ')" }}
       >
-        {/* Logo */}
         <img
           src="/aurum-logo.png"
           alt="Aurum CoNexus"

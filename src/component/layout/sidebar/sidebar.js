@@ -7,11 +7,11 @@ export default function Sidebar() {
   const pathname = usePathname();
 
   const links = [
-    { href: "/dashboard", label: "Dashboard" },
+    { href: "/dashboard/members", label: "Dashboard" },
     { href: "/dashboard/meetings", label: "Meetings" },
-    { href: "/dashboard/members", label: "Members" },
+    { href: "/dashboard", label: "Members" },
     { href: "/dashboard/business", label: "Business" },
-    { href: "/dashboard/events", label: "Event" },
+    { href: "/dashboard/evententries", label: "Event" },
     { href: "/dashboard/podcast", label: "Podcast" },
   ];
 
@@ -33,22 +33,3 @@ export default function Sidebar() {
     </aside>
   );
 }
-
-/* import Link from "next/link";
-import styles from "./sidebar.module.css";
-
-export default function Sidebar() {
-  return (
-    <aside className={styles.sidebar}>
-      <nav className={styles.nav}>
-        <Link href="/" className={styles.link}>Dashboard</Link>
-        <Link href="/meetings" className={styles.link}>Meetings</Link>
-        <Link href="/members" className={styles.link}>Members</Link>
-        <Link href="/business" className={styles.link}>Business</Link>
-        <Link href="/event" className={styles.link}>Event</Link>
-        <Link href="/podcast" className={styles.link}>Podcast</Link>
-      </nav>
-    </aside>
-  );
-}
- */

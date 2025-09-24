@@ -4,17 +4,14 @@ import Image from "next/image";
 import { CalendarDays, MapPin, Clock } from "lucide-react";
 import EventEntries from "./AddEvent";
 export default function CurrentEventCard({ event }) {
-  const [openModal, setOpenModal] = useState(false);
 
   return (
     <>
-      <div className="border rounded-lg bg-white shadow-sm p-6 flex flex-col lg:flex-row items-start gap-6">
-        {/* Left - Venue Info */}
-        <div className="flex-1">
-          <h3 className="text-md font-semibold mb-3 text-gray-700">Venue Information</h3>
+      <div className="p-6 flex flex-col lg:flex-row items-start gap-6">
+        <div className="flex flex-col flex-1 gap-5">
+          <h3 className="text-md font-semibold mb-3 text-gray-700" style={{fontSize:"25px"}}>Venue Information</h3>
           <p className="font-medium text-gray-900 mb-2">{event.title}</p>
-
-          <div className="space-y-2 text-sm text-gray-600">
+          <div className="flex flex-col space-y-2 text-sm text-gray-600 gap-3">
             <div className="flex items-center gap-2">
               <CalendarDays className="h-4 w-4" />
               <span>{event.date}</span>
@@ -30,27 +27,24 @@ export default function CurrentEventCard({ event }) {
           </div>
 
           <button
-            onClick={() => setOpenModal(true)}
-            className="mt-4 rounded-lg border px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100"
+            className="mt-4 max-w-[300px] max-h-[64px] rounded-lg border px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100"
           >
             Add Entries+
           </button>
         </div>
 
-        {/* Right - Image */}
-        <div className="w-full lg:w-[337px] h-[260px]">
+        {/* Right Section */}
+        <div className="flex-1 max-w-[450px] h-auto">
           <Image
-            src={event.image || "/images/event.png"}
+            src="/images/hall.jpg"
             alt={event.title}
-            width={237}
-            height={260}
+            width={337}
+            height={200}
             className="w-full h-full object-cover rounded-lg"
           />
         </div>
       </div>
 
-      {/* Popup */}
-      <EventEntries open={openModal} onClose={() => setOpenModal(false)} />
     </>
   );
 }
