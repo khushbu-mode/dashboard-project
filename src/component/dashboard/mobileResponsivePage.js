@@ -3,12 +3,11 @@
 import { useState } from "react";
 import { Bell, Phone, Video, MoreVertical, Calendar, Users, BarChart2, Crown } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";   // ✅ Add this line
+import Link from "next/link";
 
 
 export default function MobileResponsivePage() {
   const [filter, setFilter] = useState("Today");
-  const [showMore, setShowMore] = useState(false); // 👈 state for More menu
 
   const meetings = [
     {
@@ -102,13 +101,12 @@ export default function MobileResponsivePage() {
             <p className="text-sm text-gray-500">{m.duration}</p>
             <div className="flex items-center justify-between mt-2">
               <span
-                className={`text-xs px-2 py-1 rounded-full ${
-                  m.status === "Confirmed"
+                className={`text-xs px-2 py-1 rounded-full ${m.status === "Confirmed"
                     ? "bg-green-100 text-green-600"
                     : m.status === "Pending"
-                    ? "bg-yellow-100 text-yellow-600"
-                    : "bg-red-100 text-red-600"
-                }`}
+                      ? "bg-yellow-100 text-yellow-600"
+                      : "bg-red-100 text-red-600"
+                  }`}
               >
                 {m.status}
               </span>
@@ -124,35 +122,15 @@ export default function MobileResponsivePage() {
 
       {/* Bottom Nav */}
       <div className="fixed bottom-0 left-0 right-0 bg-white border-t flex justify-around py-2">
-        <NavItem label="Dashboard" icon={<Calendar className="w-6 h-6" />} active={false} />
+        <Link
+          key="/dashboard/addmember"
+          href="/dashboard/addmember"
+        >
+          <NavItem label="Dashboard" icon={<Calendar className="w-6 h-6" />} active={false} />
+        </Link>
         <NavItem label="Meetings" icon={<Users className="w-6 h-6" />} active={true} />
         <NavItem label="Business" icon={<BarChart2 className="w-6 h-6" />} active={false} />
-        
-        {/* More with dropdown */}
-        <div className="relative">
-          <button
-            onClick={() => setShowMore(!showMore)}
-            className="flex flex-col items-center text-xs text-gray-500"
-          >
-            <MoreVertical className="w-6 h-6" />
-            <span>More</span>
-          </button>
-
-          {showMore && (
-            <div className="absolute bottom-12 right-0 bg-white border rounded-lg shadow-lg w-40">
-              <Link href="/dashboard">
-                <div className="px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">
-                  Dashboard
-                </div>
-              </Link>
-              <Link href="/addmember">
-                <div className="px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">
-                  Add Member
-                </div>
-              </Link>
-            </div>
-          )}
-        </div>
+        <NavItem label="More" icon={<MoreVertical className="w-6 h-6" />} active={false} />
       </div>
     </div>
   );
@@ -161,9 +139,13 @@ export default function MobileResponsivePage() {
 function OverviewCard({ icon, title, value }) {
   return (
     <div className="p-4 rounded-xl border flex flex-col space-y-1" style={{ borderColor: '#E5E7EB' }}>
-      <div className="flex items-center space-x-2">{icon}</div>
+      <div className="flex items-center space-x-2">
+        {icon}
+      </div>
+
       <h3 className="text-lg font-bold">{value}</h3>
       <span className="text-xs text-gray-500">{title}</span>
+
     </div>
   );
 }
@@ -171,9 +153,8 @@ function OverviewCard({ icon, title, value }) {
 function NavItem({ label, icon, active }) {
   return (
     <button
-      className={`flex flex-col items-center text-xs ${
-        active ? "text-indigo-600" : "text-gray-500"
-      }`}
+      className={`flex flex-col items-center text-xs ${active ? "text-indigo-600" : "text-gray-500"
+        }`}
     >
       {icon}
       <span>{label}</span>

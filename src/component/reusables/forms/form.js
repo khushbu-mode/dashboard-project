@@ -3,7 +3,7 @@ import { useState } from "react";
 export default function FormSection({ title, children, defaultOpen = true }) {
   const [open, setOpen] = useState(defaultOpen);
   return (
-    <section className="bg-white border border-[#cecece] rounded-lg">
+    <section className="bg-white ring-2 ring-[#e6e9ee] rounded-lg overflow-hidden">
       <div
         className="flex items-center justify-between px-6 py-4 cursor-pointer"
         onClick={() => setOpen((s) => !s)}

@@ -3,30 +3,9 @@ import { FaMedal, FaGem, FaBolt } from "react-icons/fa";
 
 export default function MembershipRadio({ control }) {
   const options = [
-    {
-      value: "gold",
-      label: "Gold Membership",
-      icon: FaMedal,
-      bg: "bg-yellow-100",
-      iconColor: "text-yellow-500",
-      borderColor: "border-yellow-500",
-    },
-    {
-      value: "platinum",
-      label: "Platinum Membership",
-      icon: FaGem,
-      bg: "bg-slate-100",
-      iconColor: "text-slate-500",
-      borderColor: "border-slate-500",
-    },
-    {
-      value: "titanium",
-      label: "Titanium Membership",
-      icon: FaBolt,
-      bg: "bg-purple-100",
-      iconColor: "text-purple-500",
-      borderColor: "border-purple-500",
-    },
+    { value: "gold", label: "Gold Membership", icon: FaMedal, bg: "bg-yellow-400" },
+    { value: "platinum", label: "Platinum Membership", icon: FaGem, bg: "bg-slate-400" },
+    { value: "titanium", label: "Titanium Membership", icon: FaBolt, bg: "bg-gray-700" },
   ];
 
   return (
@@ -43,9 +22,9 @@ export default function MembershipRadio({ control }) {
               return (
                 <label
                   key={opt.value}
-                   className={`flex items-center gap-3 p-3 rounded-lg cursor-pointer border flex-1 min-w-[160px] transition-all overflow-hidden
-                    ${isSelected ? `${opt.borderColor} border-2` :  " border border-[#e6e9ee]"}
-                  `}
+                  className={`flex items-center gap-2 p-3 rounded-lg cursor-pointer border ${
+                    isSelected ? "border-blue-600" : "border-gray-200"
+                  }`}
                 >
                   <input
                     type="radio"
@@ -55,9 +34,9 @@ export default function MembershipRadio({ control }) {
                     className="hidden"
                   />
                   <div
-                    className={`${opt.bg} p-3 rounded-full flex items-center justify-center`}
+                    className={`${opt.bg} p-2 rounded-full text-white flex items-center justify-center`}
                   >
-                    <Icon className={`${opt.iconColor} text-xl`} />
+                    <Icon />
                   </div>
                   <span className="text-sm font-medium">{opt.label}</span>
                 </label>

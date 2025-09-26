@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function ValidityRadio({ register,required = false }) {
+export default function ValidityRadio({ register, required = false }) {
   const [selected, setSelected] = useState("1");
 
   const options = [
@@ -10,15 +10,18 @@ export default function ValidityRadio({ register,required = false }) {
   ];
 
   return (
-  <div className="flex flex-col" style={{marginBottom:"16px"}}>
-      <label className="text-[13px] text-[#2b3a4a] mb-2 font-medium">
+    <div className="mb-4 w-full">
+      <label className="text-sm text-[#2b3a4a] mb-2 font-medium block">
         Validity
         {required && <span className="text-black ml-1">*</span>}
       </label>
 
-      <div className="flex items-center gap-6 text-sm" style={{height:'44px'}}>
+      <div className="flex flex-col sm:flex-row sm:items-center sm:gap-6 gap-3 text-sm">
         {options.map((opt) => (
-          <label key={opt.value} className="inline-flex items-center gap-2">
+          <label
+            key={opt.value}
+            className="flex items-center gap-2 cursor-pointer"
+          >
             <input
               type="radio"
               value={opt.value}

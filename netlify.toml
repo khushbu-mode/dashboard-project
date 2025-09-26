@@ -1,6 +1,5 @@
 [build]
   command   = "npm run build"
-  # plugin will handle publishing serverless/edge outputs; keep publish set to ".next" or leave default in UI
   publish   = ".next"
   functions = ".netlify/functions"
 
