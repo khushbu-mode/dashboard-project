@@ -3,9 +3,12 @@
 import { useState } from "react";
 import { Bell, Phone, Video, MoreVertical, Calendar, Users, BarChart2, Crown } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";   // ✅ Add this line
 
-export default function mobileResponsivePage() {
+
+export default function MobileResponsivePage() {
   const [filter, setFilter] = useState("Today");
+  const [showMore, setShowMore] = useState(false); // 👈 state for More menu
 
   const meetings = [
     {
@@ -124,7 +127,32 @@ export default function mobileResponsivePage() {
         <NavItem label="Dashboard" icon={<Calendar className="w-6 h-6" />} active={false} />
         <NavItem label="Meetings" icon={<Users className="w-6 h-6" />} active={true} />
         <NavItem label="Business" icon={<BarChart2 className="w-6 h-6" />} active={false} />
-        <NavItem label="More" icon={<MoreVertical className="w-6 h-6" />} active={false} />
+        
+        {/* More with dropdown */}
+        <div className="relative">
+          <button
+            onClick={() => setShowMore(!showMore)}
+            className="flex flex-col items-center text-xs text-gray-500"
+          >
+            <MoreVertical className="w-6 h-6" />
+            <span>More</span>
+          </button>
+
+          {showMore && (
+            <div className="absolute bottom-12 right-0 bg-white border rounded-lg shadow-lg w-40">
+              <Link href="/dashboard">
+                <div className="px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">
+                  Dashboard
+                </div>
+              </Link>
+              <Link href="/addmember">
+                <div className="px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">
+                  Add Member
+                </div>
+              </Link>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
@@ -133,13 +161,9 @@ export default function mobileResponsivePage() {
 function OverviewCard({ icon, title, value }) {
   return (
     <div className="p-4 rounded-xl border flex flex-col space-y-1" style={{ borderColor: '#E5E7EB' }}>
-      <div className="flex items-center space-x-2">
-        {icon}
-      </div>
-
+      <div className="flex items-center space-x-2">{icon}</div>
       <h3 className="text-lg font-bold">{value}</h3>
-        <span className="text-xs text-gray-500">{title}</span>
-
+      <span className="text-xs text-gray-500">{title}</span>
     </div>
   );
 }

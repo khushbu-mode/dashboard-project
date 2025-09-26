@@ -19,7 +19,7 @@ export default function PageHeader({ currentEvent }) {
   return (
     <div className="w-full mx-auto px-8 py-6">
       <div className="flex items-center justify-between mb-6  pb-4">
-        <Link href="/members" className="flex items-center gap-3">
+ <Link href="/dashboard" className="flex items-center gap-3">
           <FaArrowLeft className="text-xl text-gray-700" />
           <h2 className="text-lg font-semibold text-gray-800">Events Entry</h2>
         </Link>
