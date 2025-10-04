@@ -6,9 +6,9 @@ import "../../app/globals.css";
 export default function DashboardLayout({ children }) {
   return (
       <div>
-      <div style={{ display: "flex" }}>
+      <div className="flex">
         <Sidebar />
-        <main style={{ flex: 1, background: "#f8fafc" }}>
+        <main className="flex-1 bg-[#f8fafc]">
           <Header />
           {children}
         </main>

@@ -14,24 +14,23 @@ export default function TextBox({
   const showError = touched && required && !value;
 
   return (
-    <div style={{ marginBottom: "16px", }}>
-      {label && <label style={{ display: "block", marginBottom: "6px" }}>{label}</label>}
+    <div className="mb-4">
+{label && (
+    <label className="block mb-1.5">
+      {label}
+    </label>
+  )}
       <input
         type={type}
         value={value}
         placeholder={placeholder}
         onChange={(e) => onChange(e.target.value)}
         onBlur={() => setTouched(true)}
-        style={{
-          width: "100%",
-          padding: "10px",
-          borderRadius: "6px",
-          border: showError ? "1px solid red" : "1px solid #ccc",
-          outline: "none",
-        }}
+        
+        className={`w-full p-2.5 rounded-md outline-none border${showError ? 'border-red-500' : ' border-gray-300'} focus:border-blue-500`}
       />
       {showError && (
-        <p style={{ color: "red", fontSize: "12px", marginTop: "4px" }}>
+        <p className={"trxt-red-500 text-sm mt-1"}>
           {errorMessage || `${label} is required`}
         </p>
       )}

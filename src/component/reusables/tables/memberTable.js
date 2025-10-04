@@ -34,7 +34,7 @@ export default function MembersTable() {
               <td>{m.name}</td>
               <td>{m.code}</td>
               <td><span className={`${styles.badge} ${styles[m.tier.toLowerCase()]}`}>{m.tier}</span></td>
-              <td><span className={`${styles.status} ${styles[m.status.toLowerCase()]}`}>{m.status}</span></td>
+              <td><span className={`${styles.status} ${s[m.status.toLowerCase()]}`}>{m.status}</span></td>
               <td>{m.joined}</td>
               <td><FaEye/></td>
             </tr>

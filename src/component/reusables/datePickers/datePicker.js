@@ -2,7 +2,7 @@ import { Controller } from 'react-hook-form';
 
 export default function DateField({ label, name, control, required = false }) {
   return (
-    <div className="flex flex-col" style={{marginBottom:"16px"}}>
+    <div className="flex flex-col mb-4" >
       <label className="text-[13px] text-[#2b3a4a] mb-2 font-medium">
         {label}
         {required && <span className="text-black ml-1">*</span>}

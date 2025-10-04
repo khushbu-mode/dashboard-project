@@ -18,30 +18,25 @@ export default function Dashboard() {
   };
 
   return (
-    <div style={{ display: "flex" }}>
+    <div className="flex">
       <Sidebar />
-      <main style={{ flex: 1, background: "#f8fafc" }}>
+      <main className="flex-1 bg-[#f8fafc]">
         <Header />
-        <div style={{ padding: "95px", }}>
-          <div style={{ padding: "13px" }}>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-between",
-              }}
-            >
-              <p style={{ fontSize: "30px", margin: 0 }}>
+       <div className="p-[95px]">
+    <div className="p-3.5">
+
+                 <div className="flex items-center justify-between">
+              <p className="text-3xl m-0">
                 Members Management System
               </p>
-              <div style={{ display: "flex", gap: "15px" }}>
+              <div className="flex gap-4">
                 <button className={headerStyles.eventBtn} onClick={evententries}>Event Entries</button>
                 <button className={headerStyles.addBtn} onClick={addmember}>+ Add New Member</button>
               </div>
             </div>
 
             {/* Subtext */}
-            <p style={{ color: "gray", marginBottom: "20px" }}>
+            <p className="text-gray-500 mb-5">
               Generate unique codes, create and manage member profiles, and track
               membership status
             </p>
@@ -49,7 +44,7 @@ export default function Dashboard() {
           </div>
 
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "20px", marginBottom: "20px" }}>
+          <div className="grid grid-cols-4 gap-5 mb-5">
             <StatCard icon={FaUsers} value="350" label="Active Member" iconColor="#22c55e" bgColor="#7ef7abff" />
             <StatCard icon={FaCrown} value="135" label="Gold" ic="#facc15" bgColor="#ffe682ff" />
             <StatCard icon={FaGem} value="121" label="Platinum" iconColor="#9ca3af" bgColor="#e8f0ffff" />

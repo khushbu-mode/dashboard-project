@@ -85,7 +85,7 @@ export default function MobileResponsivePage() {
 
       <div className="space-y-3">
         {meetings.map((m, idx) => (
-          <div key={idx} className="p-3 border rounded-xl shadow-sm" style={{ borderColor: '#E5E7EB' }}>
+          <div key={idx} className="p-3 border rounded-xl shadow-sm border-[#E5E7EB]">
             <div className="flex justify-between items-center">
               <div>
                 <h3 className="font-medium">{m.name}</h3>
@@ -138,7 +138,7 @@ export default function MobileResponsivePage() {
 
 function OverviewCard({ icon, title, value }) {
   return (
-    <div className="p-4 rounded-xl border flex flex-col space-y-1" style={{ borderColor: '#E5E7EB' }}>
+    <div className="p-4 rounded-xl border flex flex-col space-y-1 border-[#E5E7EB]" >
       <div className="flex items-center space-x-2">
         {icon}
       </div>

@@ -1,6 +1,6 @@
 export default function TextField({ label, name, register, placeholder = '', required = false, type = 'text', className = '' }) {
   return (
-    <div className={`flex flex-col ${className}`} style={{marginBottom:"16px"}}>
+    <div className={`flex flex-col  mb-4 ${className}`} >
       <label className="text-[13px] text-[#2b3a4a] mb-2 font-medium">{label}{required && <span className="text-black ml-1">*</span>}</label>
       <input
         {...register(name, { required })}

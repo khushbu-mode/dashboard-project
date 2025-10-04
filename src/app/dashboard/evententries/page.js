@@ -54,7 +54,7 @@ export default function EventsPage() {
   return (
     <div>
       <Header />
-        <div className="p-6 mt-20" style={{padding:"40px 80px"}}>
+        <div className="mt-20 px-20 py-10">
           <PageHeader currentEvent={currentEvent} />
           <h2 className="text-lg font-semibold mt-8 mb-3 text-gray-900">Upcoming Events</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">

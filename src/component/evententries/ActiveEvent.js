@@ -8,7 +8,7 @@ export default function CurrentEventCard({ event }) {
     <>
       <div className="p-6 flex flex-col lg:flex-row items-start gap-6">
         <div className="flex flex-col flex-1 gap-5">
-          <h3 className="text-md font-semibold mb-3 text-gray-700" style={{fontSize:"25px"}}>Venue Information</h3>
+          <h3 className="text-md font-semibold mb-3 text-gray-700 text-[25px]" >Venue Information</h3>
           <p className="font-medium text-gray-900 mb-2">{event.title}</p>
           <div className="flex flex-col space-y-2 text-sm text-gray-600 gap-3">
             <div className="flex items-center gap-2">

@@ -59,9 +59,10 @@ export default function LoginPage() {
       </div>
 
       <div
-        className="hidden md:flex flex-1 flex-col justify-center items-start p-8 lg:p-12 bg-cover bg-center rounded-t-3xl md:rounded-none md:rounded-l-3xl relative"
-        style={{ backgroundImage: "url('/images/login.jpg')" }}
-      >
+  className="hidden md:flex flex-1 flex-col justify-center items-start p-8 lg:p-12 bg-[url('/images/login.jpg')] bg-cover bg-center rounded-t-3xl md:rounded-none md:rounded-l-3xl relative"
+>
+</div>
+
         <Image
           src="/images/logo.png"
           alt="Aurum CoNexus"
